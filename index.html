@@ -25,7 +25,7 @@ var map = new mapboxgl.Map({
 });
 
 map.on('click', function (e) {
-    var features = map.queryRenderedFeatures(e.point, { layers: ['sotm-hackday', 'sotm-hackday copy'] });
+    var features = map.queryRenderedFeatures(e.point, { layers: ['sotm-hackday-attendees M', 'sotm-hackday-attendees F', 'sotm-hackday-attendees copy'] });
 
     if (!features.length) {
         return;
