@@ -30,21 +30,16 @@ var map = new mapboxgl.Map({
 
 map.on('load', function() {
 
-    // Add a new source from our GeoJSON data and set the
-    // 'cluster' option to true.
     map.addSource("SOTM_Mappers", {
         type: "vector",
-        // Point to GeoJSON data. This example visualizes all M1.0+ earthquakes
-        // from 12/22/15 to 1/21/16 as logged by USGS' Earthquake hazards program.
+       
         data: "ramyaragupathy.citjss252002n4yqnrjenikcr-61yr6",
         cluster: true,
         clusterMaxZoom: 14, // Max zoom to cluster points on
         clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
     });
 
-    // Use the earthquakes source to create five layers:
-    // One for unclustered points, three for each cluster category,
-    // and one for cluster labels.
+    
     map.addLayer({
         "id": "unclustered-points",
         "type": "symbol",
@@ -54,8 +49,7 @@ map.on('load', function() {
         }
     });
 
-    // Display the earthquake data in three layers, each filtered to a range of
-    // count values. Each range gets a different fill color.
+    
     var layers = [
         [150, '#f28cb1'],
         [20, '#f1f075'],
@@ -79,7 +73,7 @@ map.on('load', function() {
         });
     });
 
-    // Add a layer for the clusters' count labels
+    
     map.addLayer({
         "id": "cluster-count",
         "type": "symbol",
