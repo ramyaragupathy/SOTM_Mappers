@@ -23,8 +23,9 @@ mapboxgl.accessToken = 'pk.eyJ1IjoicmFteWFyYWd1cGF0aHkiLCJhIjoiOHRoa2JJTSJ9.6Y38
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/ramyaragupathy/citjtx2hz005f2imsnqaq3vsh',
-    center: [-103.59179687498357, 40.66995747013945],
-    zoom: 3
+    hash:true,
+    
+    zoom: 1
 });
 
 map.on('load', function() {
