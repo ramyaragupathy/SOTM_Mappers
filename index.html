@@ -23,6 +23,25 @@ var map = new mapboxgl.Map({
    // center: [-74.50, 40], // starting position
     zoom: 2 // starting zoom
 });
+
+map.on('click', function (e) {
+    var features = map.queryRenderedFeatures(e.point, { layers: ['sotm-hackday', 'sotm-hackday copy'] });
+
+    if (!features.length) {
+        return;
+    }
+
+    var feature = features[0];
+
+    // Populate the popup and set its coordinates
+    // based on the feature found.
+    var popup = new mapboxgl.Popup()
+        .setLngLat(feature.geometry.coordinates)
+        .setHTML(feature.properties.description)
+        .addTo(map);
+});
+
+
 </script>
 
 </body>
